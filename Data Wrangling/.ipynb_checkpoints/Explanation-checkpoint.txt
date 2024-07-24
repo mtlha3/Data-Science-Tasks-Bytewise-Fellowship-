@@ -1,0 +1,36 @@
+'DATA WRANGLING I'
+
+With the help of a function of Pandas library "read_csv()" we can read the path of the csv file and start analyze the data in the file. 
+.head(10) is a function of pandas, it shows top five values of dataset by default but it can also be defined by how much values you have to show from the dataset.
+
+For checking the null values we have 2 functions
+    .isnull().any() return True if any column consist of null value and also return False if any column consist of no null values
+    .isnull().sum() this return the integer value after summing the total null values present in the columns seperately.
+
+For Mean Imputation we have pandas function of .mean() using fillna(), these funtions help us to fill the empty values with the total mean values of the column.
+for mode imputation we have pandas function of .mode()[0] using fillna(), these function help us to fill the empty value with the first mode values of the column.
+
+.astype() function of pandas is used to change the data type of the column.
+
+Normalization and Scaling is the technique used to set the values with (many variation) of the columns to certain range.
+
+One Hot Encode is the technique used to split the columns with more the 1 differnet values to the no of columns equal to the no of differnet values.
+
+
+
+'DATA WRANGLING II'
+
+
+
+Creating a new columm 'FamilySize' by summing SibSp and Parch + 1 involves simple maths operation.
+
+Creating a new column consist of binary value 0 and 1 using numpy method to search where FamilySize is 1 Alone column says it 1 else it 0.
+
+It adds a new column Fare_log to this DataFrame, which contains the natural logarithm of the Fare values incremented by one (to handle zero values) using the np.log1p function from the NumPy library.
+
+To extracts titles (such as Mr, Mrs, Dr, etc.) from the `Name` column in the `data` DataFrame using a regular expression and adds these titles as a new column called `Title`. The regular expression `r'([A-Za-z]+)\.'` matches any sequence of letters followed by a period. \. seaches the dot in the string and where it occur it exract the title till that dot.
+
+
+To drop dunpilcates from the dataframe use pandas function of drop.duplicates() is used. Which in return gives the dataframe withno duplicate values in it.
+
+Removes outliers from a DataFrame column using the Interquartile Range (IQR) method. It calculates the lower and upper bounds based on 1.5x the IQR, identifies values outside these bounds as outliers, and removes them. Handling outliers is crucial because they can skew the data analysis, leading to misleading statistical conclusions and model predictions.
